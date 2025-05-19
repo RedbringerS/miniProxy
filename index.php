@@ -58,6 +58,12 @@ $landingExampleURL = "https://example.net";
 
 /****************************** END CONFIGURATION ******************************/
 
+// Получаем порт из переменной окружения, если он есть, иначе используем 8080
+$port = getenv('PORT') ?: 8080;
+
+// Запускаем встроенный сервер на этом порту
+echo "Server is running on port: $port"; // Это поможет понять, на каком порту запускается сервер
+
 ob_start("ob_gzhandler");
 
 if (version_compare(PHP_VERSION, "5.4.7", "<")) {
